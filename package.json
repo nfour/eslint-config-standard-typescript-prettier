@@ -1,6 +1,7 @@
 {
   "name": "eslint-config-standard-typescript-prettier",
   "version": "1.0.0",
+  "description": "A simple eslint config for modern TypeScript projects.",
   "main": "./eslint",
   "scripts": {
     "dev": "nodemon -x 'yalc push --changed'"
