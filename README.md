@@ -9,6 +9,7 @@ This package configures **eslint** with:
 - **`@typescript-eslint/recommended`** rules https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
 - Requires semicolons (from prettier) for consistancy with types
 - Disables some opinionated type check rules
+- All the dependencies are **peerDependencies** so you shouldnt have to update this package often
 
 > For reference: [./eslint.json](./eslint.json).
 
@@ -20,7 +21,7 @@ This package configures **eslint** with:
   + [3. Configure prettier](#3-configure-prettier)
 + [FAQ](#faq)
   + [Eslint cant find my files](#eslint-cant-find-my-files)
-  + [I want to override rules](#i-want-to-override-rules)
+  + [I want fine grained control](#i-want-fine-grained-control)
   + [I want linting to appear as warnings, not errors](#i-want-linting-to-appear-as-warnings-not-errors)
 + [This project](#this-project)
 + [Potential issues](#potential-issues)
@@ -35,24 +36,7 @@ Install all of the peer dependencies listed in [this projects package.json](./pa
 
 ### 2. Configure eslint
 
-Configure your projects `.eslintrc.js` like so:
-
-```js
-const config = require('eslint-config-standard-typescript-prettier');
-
-module.exports = {
-  ...config,
-  parserOptions: { project: "./tsconfig.json" },
-};
-```
-
-> By configuring a `.eslintrc.js` like this, you can choose to provide **all** of the linting dependencies from your project, meaning you shouldnt have to update this package.
-
-> Eslint might be changing their config, which is why a `.eslintrc.js` format is recommended.
-> 
-> More info: https://github.com/eslint/rfcs/pull/9
-
-Alternatively, you may also choose to utilize `"extends"` like so:
+Configure eslint like so:
 
 ```json
 {
@@ -91,9 +75,11 @@ On the CLI, `eslint` requires the `--ext` flag (currently):
 eslint --ext .ts,.tsx .
 ```
 
-### I want to override rules
+### I want fine grained control
 
-Do this:
+The packages exports a plain object, go nuts!
+
+In an `.eslintrc.js`:
 
 ```js
 const config = require('eslint-config-standard-typescript-prettier');
@@ -106,6 +92,19 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "error",
   },
 };
+```
+
+> Eslint might be changing their config, which is why a `.eslintrc.js` format is recommended.
+> 
+> More info: https://github.com/eslint/rfcs/pull/9
+
+In a `.prettierrc.js`:
+
+```js
+module.exports = {
+  ...require('eslint-config-standard-typescript-prettier/prettier'),
+  semi: false, // This is how you turn off semicolons, by the way
+}
 ```
 
 ### I want linting to appear as warnings, not errors
