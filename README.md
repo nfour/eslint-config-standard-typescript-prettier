@@ -17,11 +17,10 @@ This package configures **eslint** with:
 
 + [Usage](#usage)
   + [1. Install dependencies](#1-install-dependencies)
-  + [2. Configure eslint](#2-configure-eslint)
-  + [3. Configure prettier](#3-configure-prettier)
+  + [2. Configure eslint and prettier](#2-configure-eslint-and-prettier)
 + [FAQ](#faq)
-  + [Eslint cant find my files](#eslint-cant-find-my-files)
   + [I want fine grained control](#i-want-fine-grained-control)
+  + [Eslint cant find my files](#eslint-cant-find-my-files)
   + [I want linting to appear as warnings, not errors](#i-want-linting-to-appear-as-warnings-not-errors)
 + [This project](#this-project)
 + [Potential issues](#potential-issues)
@@ -34,46 +33,25 @@ This package configures **eslint** with:
 
 Install all of the peer dependencies listed in [this projects package.json](./package.json).
 
-### 2. Configure eslint
+### 2. Configure eslint and prettier
 
-Configure eslint like so:
+The easiest way is to configure your `package.json` like so:
 
 ```json
 {
-  "extends": "standard-typescript-prettier",
-  "parserOptions": { "project": "./tsconfig.json" }
+  "eslintConfig": {
+    "extends": "standard-typescript-prettier",
+    "parserOptions": { "project": "./tsconfig.json" }
+  },
+  "prettier": "eslint-config-standard-typescript-prettier/prettier"
 }
 ```
 
-### 3. Configure prettier
-
-Configure prettier in one of two ways:
-
-1. In your `package.json`
-    ```json
-    {
-      "prettier": "eslint-config-standard-typescript-prettier/prettier"
-    }
-    ```
-
-2. In a `.prettierrc.js` :
-    ```js
-    module.exports = {
-      ...require('eslint-config-standard-typescript-prettier/prettier'),
-      semi: false, // This is how you turn off semicolons, by the way
-    }
-    ```
+> For other config recipes, see [I want fine grained control](#I-want-fine-grained-control)
 
 All done!
 
 ## FAQ
-
-### Eslint cant find my files
-
-On the CLI, `eslint` requires the `--ext` flag (currently):
-```
-eslint --ext .ts,.tsx .
-```
 
 ### I want fine grained control
 
@@ -106,6 +84,14 @@ module.exports = {
   semi: false, // This is how you turn off semicolons, by the way
 }
 ```
+
+### Eslint cant find my files
+
+On the CLI, `eslint` requires the `--ext` flag (currently):
+```
+eslint --ext .ts,.tsx .
+```
+
 
 ### I want linting to appear as warnings, not errors
 
