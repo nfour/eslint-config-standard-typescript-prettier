@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple eslint config for modern TypeScript projects.",
   "main": "./eslint",
+  "files": ["eslint.js", "prettier.js"],
   "scripts": {
     "dev": "nodemon -x 'yalc push --changed'"
   },

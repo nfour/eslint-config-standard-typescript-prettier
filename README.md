@@ -11,7 +11,7 @@ This package configures **eslint** with:
 - Disables some opinionated type check rules
 - All the dependencies are **peerDependencies** so you shouldnt have to update this package often
 
-> For reference: [./eslint.json](./eslint.json).
+> For reference: [./eslint.js](./eslint.js).
 
 ----------
 
