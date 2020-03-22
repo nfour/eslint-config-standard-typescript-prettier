@@ -1,9 +1,12 @@
 {
   "name": "eslint-config-standard-typescript-prettier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple eslint config for modern TypeScript projects.",
   "main": "./eslint",
-  "files": ["eslint.js", "prettier.js"],
+  "files": [
+    "eslint.js",
+    "prettier.js"
+  ],
   "repository": "git@github.com:nfour/eslint-config-standard-typescript-prettier",
   "scripts": {
     "dev": "nodemon -x 'yalc push --changed'"
