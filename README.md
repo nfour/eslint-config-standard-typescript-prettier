@@ -6,6 +6,7 @@ The package emits a `eslint.json`, configured to connect together the various ne
 
 - standardjs config https://github.com/standard
 - typescript support https://github.com/typescript-eslint/typescript-eslint
+- prettier recommended config 
 
 This does not include any opinionated type rules - see the recipes section below.
 
