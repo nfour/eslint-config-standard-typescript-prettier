@@ -22,7 +22,7 @@ This package configures **eslint** with:
   + [I want fine grained control](#i-want-fine-grained-control)
   + [Eslint cant find my files](#eslint-cant-find-my-files)
   + [I want linting to appear as warnings, not errors](#i-want-linting-to-appear-as-warnings-not-errors)
-+ [This project](#this-project)
++ [Project future](#project-future)
 + [Potential issues](#potential-issues)
 
 -----------------
@@ -113,11 +113,9 @@ Want your lint warnings turned into errors?
 
 > `yarn eslint --max-warnings 1`
 
-## This project
+## Project future
 
-The Javascript churn is real. This project will be kept up to date for as long as its necessary to keep this abstraction
-
-I hope it becomes more simple in future to configure stuff like this.
+Javascript churn is real. This project will be kept up to date **only** for as long as configuration remains tedious.
 
 ## Potential issues
 
