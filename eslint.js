@@ -21,7 +21,7 @@ module.exports = {
     // Disable opinionated rules from @typescript-eslint
     //
 
-    "@typescript-eslint/member-delimiter-style": 0 // Provided by Prettier
+    "@typescript-eslint/member-delimiter-style": 0, // Provided by Prettier
     "@typescript-eslint/interface-name-prefix": 0,
     "@typescript-eslint/no-explicit-any": 0,
     '@typescript-eslint/explicit-function-return-type': 0,

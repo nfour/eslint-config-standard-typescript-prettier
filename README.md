@@ -15,8 +15,12 @@ This package configures **eslint** with:
 ----------
 
 + [Usage](#usage)
-+ [Recipes](#recipes)
+  + [1. Install dependencies](#1-install-dependencies)
+  + [2. Configure eslint](#2-configure-eslint)
+  + [3. Configure prettier](#3-configure-prettier)
++ [FAQ](#faq)
   + [Eslint cant find my files](#eslint-cant-find-my-files)
+  + [I want to override rules](#i-want-to-override-rules)
   + [I want linting to appear as warnings, not errors](#i-want-linting-to-appear-as-warnings-not-errors)
 + [This project](#this-project)
 + [Potential issues](#potential-issues)
@@ -25,38 +29,83 @@ This package configures **eslint** with:
 
 ## Usage
 
-1. Install all of the peer dependencies listed in [this projects package.json](./package.json)
-2. Configure **eslint** like so:
+### 1. Install dependencies
+
+Install all of the peer dependencies listed in [this projects package.json](./package.json).
+
+### 2. Configure eslint
+
+Configure your projects `.eslintrc.js` like so:
+
+```js
+const config = require('eslint-config-standard-typescript-prettier');
+
+module.exports = {
+  ...config,
+  parserOptions: { project: "./tsconfig.json" },
+};
+```
+
+> By configuring a `.eslintrc.js` like this, you can choose to provide **all** of the linting dependencies from your project, meaning you shouldnt have to update this package.
+
+> Eslint might be changing their config, which is why a `.eslintrc.js` format is recommended.
+> 
+> More info: https://github.com/eslint/rfcs/pull/9
+
+Alternatively, you may also choose to utilize `"extends"` like so:
+
+```json
+{
+  "extends": "standard-typescript-prettier",
+  "parserOptions": { "project": "./tsconfig.json" }
+}
+```
+
+### 3. Configure prettier
+
+Configure prettier in one of two ways:
+
+1. In your `package.json`
     ```json
     {
-      "extends": ["standard-typescript-prettier"],
-      "parserOptions": {
-        "project": "./tsconfig.json"
-      }
+      "prettier": "eslint-config-standard-typescript-prettier/prettier"
     }
     ```
-3. Configure prettier in one of two ways:
-   - In your `package.json`
-      ```json
-      {
-        "prettier": "eslint-config-standard-typescript-prettier/prettier"
-      }
-      ```
-   - In a `.prettierrc.js` :
-      ```js
-      module.exports = {
-        ...require('eslint-config-standard-typescript-prettier/prettier'),
-        semi: false, // This is how you turn off semicolons by the way
-      }
-      ```
 
-## Recipes
+2. In a `.prettierrc.js` :
+    ```js
+    module.exports = {
+      ...require('eslint-config-standard-typescript-prettier/prettier'),
+      semi: false, // This is how you turn off semicolons, by the way
+    }
+    ```
+
+All done!
+
+## FAQ
 
 ### Eslint cant find my files
 
 On the CLI, `eslint` requires the `--ext` flag (currently):
 ```
 eslint --ext .ts,.tsx .
+```
+
+### I want to override rules
+
+Do this:
+
+```js
+const config = require('eslint-config-standard-typescript-prettier');
+
+module.exports = {
+  ...config,
+  parserOptions: { project: "./tsconfig.json" },
+  rules: {
+    ...config.rules,
+    "@typescript-eslint/no-explicit-any": "error",
+  },
+};
 ```
 
 ### I want linting to appear as warnings, not errors
