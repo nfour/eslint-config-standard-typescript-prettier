@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "eslint-config-standard",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
-  ],
-  "plugins": ["@typescript-eslint"],
-  "parser": "@typescript-eslint/parser"
-}

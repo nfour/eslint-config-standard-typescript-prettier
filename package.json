@@ -1,17 +1,28 @@
 {
   "name": "eslint-config-standard-typescript-prettier",
   "version": "1.0.0",
-  "main": "./eslint.json",
+  "main": "./eslint",
+  "scripts": {
+    "dev": "nodemon -x 'yalc push --changed'"
+  },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">=2.24.0",
     "@typescript-eslint/parser": ">=2.24.0",
+    "eslint": ">=6.2",
     "eslint-config-prettier": ">=6.10.0",
     "eslint-config-standard": ">=14.1.1",
     "eslint-plugin-import": ">=2.18.0",
-    "eslint-plugin-node": ">=9.1.0",
+    "eslint-plugin-prettier": ">=3.1.2",
     "eslint-plugin-promise": ">=4.2.1",
     "eslint-plugin-standard": ">=4.0.0",
-    "eslint": ">=6.2.2",
-    "prettier": ">=2.0.1"
+    "prettier": ">=2.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "~2.24.0",
+    "eslint-config-prettier": "~6.10.0",
+    "eslint-config-standard": "~14.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

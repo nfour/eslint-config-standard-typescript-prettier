@@ -1,14 +1,14 @@
-# eslint-config-standard-typescript-prettier
+# Eslint config: StandardJS, Typescript, Prettier
 
-This project has no dependencies. 
+A simple **eslint** config for modern **TypeScript** projects.
 
-The package emits a `eslint.json`, configured to connect together the various necessary eslint plugins and configs to provide:
-
-- standardjs config https://github.com/standard
-- typescript support https://github.com/typescript-eslint/typescript-eslint
-- prettier recommended config 
-
-This does not include any opinionated type rules - see the recipes section below.
+This package configures **eslint** with:
+- **Typescript** support https://github.com/typescript-eslint/typescript-eslint
+- **StandardJs** rules https://github.com/standard/eslint-config-standard
+- **Prettier** rules https://github.com/prettier/eslint-plugin-prettier
+- **`@typescript-eslint/recommended`** rules https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
+- Requires semicolons (from prettier) for consistancy with types
+- Disables some opinionated type check rules
 
 > For reference: [./eslint.json](./eslint.json).
 
@@ -16,8 +16,8 @@ This does not include any opinionated type rules - see the recipes section below
 
 + [Usage](#usage)
 + [Recipes](#recipes)
+  + [Eslint cant find my files](#eslint-cant-find-my-files)
   + [I want linting to appear as warnings, not errors](#i-want-linting-to-appear-as-warnings-not-errors)
-  + [I want my to lint my types](#i-want-my-to-lint-my-types)
 + [This project](#this-project)
 + [Potential issues](#potential-issues)
 
@@ -26,7 +26,7 @@ This does not include any opinionated type rules - see the recipes section below
 ## Usage
 
 1. Install all of the peer dependencies listed in [this projects package.json](./package.json)
-2. Configure your `.eslintrc.json` to look like this:
+2. Configure **eslint** like so:
     ```json
     {
       "extends": ["standard-typescript-prettier"],
@@ -35,8 +35,29 @@ This does not include any opinionated type rules - see the recipes section below
       }
     }
     ```
+3. Configure prettier in one of two ways:
+   - In your `package.json`
+      ```json
+      {
+        "prettier": "eslint-config-standard-typescript-prettier/prettier"
+      }
+      ```
+   - In a `.prettierrc.js` :
+      ```js
+      module.exports = {
+        ...require('eslint-config-standard-typescript-prettier/prettier'),
+        semi: false, // This is how you turn off semicolons by the way
+      }
+      ```
 
 ## Recipes
+
+### Eslint cant find my files
+
+On the CLI, `eslint` requires the `--ext` flag (currently):
+```
+eslint --ext .ts,.tsx .
+```
 
 ### I want linting to appear as warnings, not errors
 
@@ -57,23 +78,6 @@ Install `eslint-plugin-only-warn`, then add it to the mix:
 Want your lint warnings turned into errors?
 
 > `yarn eslint --max-warnings 1`
-
-### I want my to lint my types
-
-Here is how to throw in the recommended type rules from `@typescript-eslint`:
-```json
-{
-  "extends": [
-    "standard-typescript-prettier",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
-}
-```
-
-Check out https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin for more details on how to configure type linting in your project.
 
 ## This project
 
