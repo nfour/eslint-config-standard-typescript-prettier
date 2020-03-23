@@ -31,7 +31,13 @@ This package configures **eslint** with:
 
 ### 1. Install dependencies
 
-Install all of the peer dependencies listed in [this projects package.json](./package.json).
+Install all the peer dependencies listed in [this projects package.json](./package.json) into your project.
+
+This should do the trick:
+
+```sh
+npx install-peerdeps --dev --yarn eslint-config-standard-typescript-prettier
+```
 
 ### 2. Configure eslint and prettier
 
