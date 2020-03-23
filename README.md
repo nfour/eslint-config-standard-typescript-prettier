@@ -31,7 +31,7 @@ This package configures **eslint** with:
 
 ### 1. Install dependencies
 
-Install all the peer dependencies listed in [this projects package.json](./package.json) into your project.
+Install this and all the peer dependencies listed in [this projects package.json](./package.json) into your project.
 
 This should do the trick:
 
