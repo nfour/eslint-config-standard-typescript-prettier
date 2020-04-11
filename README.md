@@ -31,26 +31,22 @@ This package configures **eslint** with:
 
 ### 1. Install dependencies
 
-Install this and all the peer dependencies listed in [this projects package.json](./package.json) into your project.
-
-This should do the trick:
+This version (2.0.0) of the library includes necessary dependencies.
 
 ```sh
-npx install-peerdeps --dev --yarn eslint-config-standard-typescript-prettier
+yarn add -D eslint-config-standard-typescript-prettier
 ```
 
 ### 2. Configure eslint and prettier
 
-The easiest way is to configure your `package.json` like so:
+Add this to your `package.json`:
 
 ```json
-{
-  "eslintConfig": {
-    "extends": "standard-typescript-prettier",
-    "parserOptions": { "project": "./tsconfig.json" }
-  },
-  "prettier": "eslint-config-standard-typescript-prettier/prettier"
-}
+"eslintConfig": {
+  "extends": "standard-typescript-prettier",
+  "parserOptions": { "project": "./tsconfig.json" }
+},
+"prettier": "eslint-config-standard-typescript-prettier/prettier"
 ```
 
 > For other config recipes, see [I want fine grained control](#I-want-fine-grained-control)
@@ -103,15 +99,13 @@ eslint --ext .ts,.tsx .
 
 By default, lint errors can become mixed with TypeScript errors during development.
 
-Install `eslint-plugin-only-warn`, then add it to the mix:
+`eslint-plugin-only-warn` is already included in this package, so do this:
 
 ```json
 {
   "plugins": ["only-warn"],
   "extends": ["standard-typescript-prettier"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
+  "parserOptions": { "project": "./tsconfig.json" }
 }
 ```
 
