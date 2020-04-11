@@ -15,9 +15,8 @@ This package configures **eslint** with:
 
 ----------
 
-+ [Usage](#usage)
-  + [1. Install dependencies](#1-install-dependencies)
-  + [2. Configure eslint and prettier](#2-configure-eslint-and-prettier)
++ [1. Install](#1-install)
++ [2. Configure](#2-configure)
 + [FAQ](#faq)
   + [I want fine grained control](#i-want-fine-grained-control)
   + [Eslint cant find my files](#eslint-cant-find-my-files)
@@ -27,9 +26,7 @@ This package configures **eslint** with:
 
 -----------------
 
-## Usage
-
-### 1. Install dependencies
+## 1. Install
 
 This version (2.0.0) of the library includes necessary dependencies.
 
@@ -37,7 +34,7 @@ This version (2.0.0) of the library includes necessary dependencies.
 yarn add -D eslint-config-standard-typescript-prettier
 ```
 
-### 2. Configure eslint and prettier
+## 2. Configure
 
 Add this to your `package.json`:
 
@@ -50,8 +47,6 @@ Add this to your `package.json`:
 ```
 
 > For other config recipes, see [I want fine grained control](#I-want-fine-grained-control)
-
-All done!
 
 ## FAQ
 
