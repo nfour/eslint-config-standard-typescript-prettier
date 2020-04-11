@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-standard-typescript-prettier",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A simple eslint config for modern TypeScript projects.",
   "main": "./eslint",
   "files": [
