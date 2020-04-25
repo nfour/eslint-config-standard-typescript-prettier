@@ -3,3 +3,7 @@ export type TsEslintRules = (
   & typeof import('@typescript-eslint/eslint-plugin/dist/configs/all.json')['rules']
 );
 
+export type TsEslintConfig = {
+  rules?: TsEslintRules
+}
+
