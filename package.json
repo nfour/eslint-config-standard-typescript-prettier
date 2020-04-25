@@ -5,6 +5,7 @@
   "main": "./eslint",
   "files": [
     "eslint.js",
+    "types.d.ts",
     "prettier.js"
   ],
   "repository": "git@github.com:nfour/eslint-config-standard-typescript-prettier",
