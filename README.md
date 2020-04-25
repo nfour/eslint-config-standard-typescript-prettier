@@ -17,6 +17,7 @@ This package configures **eslint** with:
 
 + [1. Install](#1-install)
 + [2. Configure](#2-configure)
++ [3. Bonus configure](#3-bonus-configure)
 + [FAQ](#faq)
   + [I want fine grained control](#i-want-fine-grained-control)
   + [Eslint cant find my files](#eslint-cant-find-my-files)
@@ -47,6 +48,12 @@ Add this to your `package.json`:
 ```
 
 > For other config recipes, see [I want fine grained control](#I-want-fine-grained-control)
+
+## 3. Bonus configure
+
+Add the comment below to get type checks on your rules in a `.eslintrc.js
+
+![](docs/vscodeTypes.png)
 
 ## FAQ
 
