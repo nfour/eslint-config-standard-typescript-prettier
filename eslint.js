@@ -1,3 +1,4 @@
+/** @ts-check @type import('./types').TsEslintConfig */
 module.exports = {
   "extends": [
     "eslint-config-standard",

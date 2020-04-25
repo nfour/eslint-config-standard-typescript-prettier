@@ -51,7 +51,9 @@ Add this to your `package.json`:
 
 ## 3. Bonus configure
 
-Add the comment below to get type checks on your rules in a `.eslintrc.js
+Add the comment below to get type checks on your rules in a `.eslintrc.js`
+
+> /** @ts-check @type import('eslint-config-standard-typescript-prettier/types').TsEslintConfig */
 
 ![](docs/vscodeTypes.png)
 
