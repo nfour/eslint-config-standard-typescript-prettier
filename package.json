@@ -3,6 +3,7 @@
   "version": "2.2.2",
   "description": "A simple eslint config for modern TypeScript projects.",
   "main": "./eslint",
+  "license": "MIT",
   "files": [
     "eslint.js",
     "types.d.ts",
