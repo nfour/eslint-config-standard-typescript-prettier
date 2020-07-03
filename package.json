@@ -7,7 +7,7 @@
     "eslint": "^7.3",
     "eslint-config-prettier": "^6",
     "eslint-config-standard": "^14",
-    "eslint-plugin-import": "^22",
+    "eslint-plugin-import": "^2.22",
     "eslint-plugin-node": "^11.0",
     "eslint-plugin-prettier": "^3.1",
     "eslint-plugin-promise": "^4.2",
