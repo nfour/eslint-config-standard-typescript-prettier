@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.0
+
+- Fix version of "eslint-plugin-import"
+
 ## 3.1.0
 
 - Remove Typescript as peerdep as it's too difficult to pin
