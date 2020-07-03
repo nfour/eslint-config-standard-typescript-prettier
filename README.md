@@ -16,6 +16,7 @@ This package configures **eslint** with:
 ----------
 
 + [1. Install](#1-install)
++ [1.1 Install Peer Dependencies](#11-install-peer-dependencies)
 + [2. Configure](#2-configure)
 + [3. Bonus configure](#3-bonus-configure)
 + [FAQ](#faq)
@@ -29,10 +30,18 @@ This package configures **eslint** with:
 
 ## 1. Install
 
-This version (2.0.0) of the library includes necessary dependencies.
-
 ```sh
 yarn add -D eslint-config-standard-typescript-prettier
+```
+
+## 1.1 Install Peer Dependencies
+
+Install all the peer dependencies listed in [this projects package.json](./package.json) into your project.
+
+This should do the trick:
+
+```sh
+npx install-peerdeps --dev --yarn eslint-config-standard-typescript-prettier
 ```
 
 ## 2. Configure
@@ -41,7 +50,7 @@ Add this to your `package.json`:
 
 ```json
 "eslintConfig": {
-  "extends": "standard-typescript-prettier",
+  "extends": ["standard-typescript-prettier"],
   "parserOptions": { "project": "./tsconfig.json" }
 },
 "prettier": "eslint-config-standard-typescript-prettier/prettier"
