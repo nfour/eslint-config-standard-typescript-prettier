@@ -41,7 +41,7 @@ Install all the peer dependencies listed in [this projects package.json](./packa
 This should do the trick:
 
 ```sh
-npx install-peerdeps --dev --yarn eslint-config-standard-typescript-prettier
+npx install-peerdeps -o --dev --yarn eslint-config-standard-typescript-prettier
 ```
 
 ## 2. Configure
