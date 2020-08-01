@@ -9,7 +9,6 @@ This package configures **eslint** with:
 - **`@typescript-eslint/recommended`** rules https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin
 - Requires semicolons (from prettier) for consistancy with types
 - Disables some opinionated type check rules
-- Includes necessary dependencies
 
 > For reference: [./eslint.js](./eslint.js).
 
