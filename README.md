@@ -17,6 +17,7 @@ This package configures **eslint** with:
 + [1. Install](#1-install)
 + [1.1 Install Peer Dependencies](#11-install-peer-dependencies)
 + [2. Configure](#2-configure)
++ [2.1 Run](#21-run)
 + [3. Bonus configure](#3-bonus-configure)
 + [FAQ](#faq)
   + [I want fine grained control](#i-want-fine-grained-control)
@@ -56,6 +57,14 @@ Add this to your `package.json`:
 ```
 
 > For other config recipes, see [I want fine grained control](#I-want-fine-grained-control)
+
+## 2.1 Run
+Run `eslint` as you normally would with appropriate [eslint CLI options](https://eslint.org/docs/user-guide/command-line-interface#options) for your needs. Soemthing like this in your `package.json` will do:
+```json
+"scripts": {
+  "lint": "esling src/**",
+},
+```
 
 ## 3. Bonus configure
 
