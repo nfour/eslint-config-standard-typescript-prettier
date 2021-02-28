@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-standard-typescript-prettier",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.2",
     "@typescript-eslint/parser": "^4.15.2",
