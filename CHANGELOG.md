@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.2.0, 4.1.0
+
+- Correctly use prettier configs
+
 ## 4.0.0
 
 - Dependencies bump
