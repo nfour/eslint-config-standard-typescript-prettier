@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0
+
+- Dependencies bump
+
 ## 3.2.0
 
 - Fix version of "eslint-plugin-import"
