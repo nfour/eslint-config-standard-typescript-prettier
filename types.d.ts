@@ -1,5 +1,5 @@
 export type TsEslintPluginRules = Record<
-  keyof typeof import('@typescript-eslint/eslint-plugin/dist/configs/all.json')['rules'],
+  keyof typeof import('@typescript-eslint/eslint-plugin/dist/configs/all.js')['rules'],
   any
 >;
 
