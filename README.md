@@ -29,6 +29,8 @@ This package configures **eslint** with:
 
 ## 1. Install
 
+> Note: For an even "easier" install option, see https://github.com/nfour/eslint-config-nfour
+
 ```sh
 yarn add -D eslint-config-standard-typescript-prettier
 ```
